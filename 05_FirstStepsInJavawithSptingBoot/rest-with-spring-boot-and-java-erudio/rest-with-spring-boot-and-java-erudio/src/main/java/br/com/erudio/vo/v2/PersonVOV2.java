@@ -1,28 +1,27 @@
-package br.com.erudio.model;
+package br.com.erudio.vo.v2;
 
-import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
-@Data
 @NoArgsConstructor
-@Entity
-@Table(name = "person")
-public class Person implements Serializable {
+@AllArgsConstructor
+@Getter
+@Setter
+public class PersonVOV2 implements Serializable {
     @Serial
     private static final long serialVersionUID = -276717165117137620L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private String firstName;
     private String lastName;
     private String address;
     private String gender;
-    @Temporal(TemporalType.DATE)
     private Date birthDate;
 
 }
